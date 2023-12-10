@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!-- saved from url=(0069)file:///C:/Users/hp/OneDrive/Desktop/xampp/htdocs/js-projects/qr.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./qr-output_files/bootstrap-icons.css">
+    <link rel="stylesheet" href="./qr-output_files/bootstrap.css">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+        }
+    .container{
+        width: 400px;
+        padding: 25px 35px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background: #fff;
+        border-radius: 10px;
+
+    }
+    .container p{
+        font-weight: 600;
+        font-size: 15px;
+        margin-bottom:8px;
+
+    }
+    .container input{
+        width: 100%;
+        height: 50px;
+        border: 1px solid black;
+        outline: 0;
+        padding: 10px;
+        margin: 10px 0 20px;
+        border-radius: 10px;
+
+    }
+    button{
+        width: 100%;
+    }
+    </style>
+</head>
+<body>
+   <div class="container">
+    <p>enter your text or URL</p>
+    <input type="text" placeholder="text or URL" id="qrText"><br><br>
+
+    <div id="imgBox">
+        <img src="file:///C:/Users/hp/OneDrive/Desktop/xampp/htdocs/js-projects/qr.html" id="qrImage">
+    </div>
+
+    <button onclick="generateQR()" class="btn btn-primary">generate QR code</button>
+   </div> 
+
+   <script>
+    let imgBox=document.getElementById("imgBox");
+    let qrImage =document.getElementById("qrImage");
+    let qrText=document.getElementById("qrText");
+
+    function generateQR(){
+      qrImage.src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="+ qrText.value;
+
+    }
+   </script>
+
+</body></html>
